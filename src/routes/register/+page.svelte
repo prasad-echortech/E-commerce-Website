@@ -35,28 +35,36 @@
 </script>
 
 <Nav />
-<main><h1>Register Here?</h1></main>
+<main class="mt-5"><h1>Register Here?</h1></main>
 <div class="d-flex justify-content-center mt-5 w-100">
-	<form on:submit|preventDefault={handleSubmit}>
-		<div class="mb-3">
-			<label for="name" class="form-label">User Name</label>
-			<input placeholder="name" type="text" class="form-control" id="name" bind:value={name} />
-
+	<div class="col-5 p-5">
+		<form on:submit|preventDefault={handleSubmit}>
 			<div class="mb-3">
-				<label for="password" class="form-label">Password</label>
+				<label for="name" class="form-label">User Name</label>
 				<input
-					placeholder="Password"
-					type="password"
-					class="form-control"
-					id="password"
-					bind:value={password}
+					placeholder="name"
+					type="text"
+					class="form-control p-2"
+					id="name"
+					bind:value={name}
 				/>
+
+				<div class="mb-3">
+					<label for="password" class="form-label">Password</label>
+					<input
+						placeholder="Password"
+						type="password"
+						class="form-control p-2"
+						id="password"
+						bind:value={password}
+					/>
+				</div>
+				<button type="submit" class="btn btn-primary fs-4">Submit</button>
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</div>
-	</form>
+		</form>
+	</div>
 </div>
-<div class="text-center">
+<div class="text-center fs-3">
 	Already Registered <a href="/login">login</a>
 </div>
 

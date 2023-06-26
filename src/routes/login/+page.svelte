@@ -29,15 +29,16 @@
 
 <Nav />
 
-<main><h1>Login Here!</h1></main>
-<div class="w-100 d-flex justify-content-center mt-5">
+<main class="mt-5"><h1>Login Here!</h1></main>
+<div class=" row  d-flex justify-content-center mt-5">
+	<div class="col-5 p-5">
 	<form>
 		<div class="mb-3">
 			<label for="name" class="form-label">User Name</label>
 			<input
 				placeholder="name"
 				type="text"
-				class="form-control"
+				class="form-control p-2"
 				id="name"
 				bind:value={login.name}
 			/>
@@ -47,17 +48,20 @@
 				<input
 					placeholder="Password"
 					type="password"
-					class="form-control"
+					class="form-control p-2"
 					id="password"
 					bind:value={login.password}
 				/>
 			</div>
-			<button type="submit" class="btn btn-primary" on:click={bcheck}>Login</button>
+			<button type="submit" class="btn btn-primary fs-3" on:click={bcheck}>Login</button>
 			<h1>{errorMsg}</h1>
 		</div>
 	</form>
 </div>
-
+</div>
+<div class="text-center fs-3">
+	New User <a href="/register"> Register Here</a>
+</div>
 <style>
 	main {
 		text-align: center;

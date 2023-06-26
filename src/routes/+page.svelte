@@ -9,8 +9,8 @@
 		localStorage.clear();
 	}
 
-	const pageSize = 5; // Number of items per page
-	const dataset = writable([]); // Your dataset goes here
+	const pageSize = 5; 
+	const dataset = writable([]); 
 
 	// Calculate the number of pages
 	const totalPages = derived(dataset, ($dataset) => Math.ceil($dataset.length / pageSize));
@@ -90,7 +90,7 @@
 	{/each}
 </div>
 
-<!-- Display pagination controls -->
+<!-- pagination controls -->
 <div class="text-center mt-4 mb-3">
 	{#each Array.from({ length: $totalPages }) as _, i}
 		<button class="btn btn-dark m-1 shadow-lg" on:click={() => goToPage(i + 1)}> {i + 1} </button>

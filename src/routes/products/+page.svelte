@@ -110,7 +110,10 @@
 		{/each}
 	</div>
 {:else}
-	<a href="/register" class="btn bg-danger text-white">Click Here To Login Login</a>
+<div class=" mt-5 text-center">
+	<a href="/register" class=" text-white mt-5 btn btn-danger mb-5"> Click here To Login</a>
+	<h1>Please Login or Register 😊</h1>
+</div>
 {/if}
 
 <!-- Display pagination controls -->

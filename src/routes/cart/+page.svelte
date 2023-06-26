@@ -32,47 +32,51 @@
 	let amoutTotal = 0;
 	console.log(amoutTotal);
 </script>
+
 {#if userdata1 != null}
-<NavProd />
-<div>
-	<a href="/products">
-		<button class=" btn bg-success text-white mt-3 ms-5">Goto Products</button>
-	</a>
-</div>
-<h1 class="text-center mt-5">Your Cart</h1>
-<div
-	class="container-fluid d-flex flex-row flex-wrap text-center justify-content-center mt-5"
-	id="wholecard"
->
-	{#each mycurrentusercart as cards}
-		{#if userdata1.id == cards.userid}
-			{#if cards.name}
-				<div class="card ms-3 mb-3" style="width: 15rem;">
-					<div class="card-body border border-success">
-						<h5 class="card-title">Title : {cards.name}</h5>
-						<h5 class="card-title">Product Id : {cards.id}</h5>
-						<h5 class="card-title">User Id : {cards.userid}</h5>
-						<p class="card-text">
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita dolorem hic aut
-							architecto perspiciatis magni adipisci quo nihil ea, unde facilis molestiae facere
-							sint nam labore, quisquam minima excepturi exercitationem!
-						</p>
-						<h5 class="card-title">Price : {cards.price} /-</h5>
-						<div>
-							<button class=" btn bg-danger text-white" on:click={remover(cards.id)}>Remove</button>
+	<NavProd />
+	<div>
+		<a href="/products">
+			<button class=" btn bg-success text-white mt-3 ms-5">Goto Products</button>
+		</a>
+	</div>
+	<h1 class="text-center mt-5">Your Cart</h1>
+	<div
+		class="container-fluid d-flex flex-row flex-wrap text-center justify-content-center mt-5"
+		id="wholecard"
+	>
+		{#each mycurrentusercart as cards}
+			{#if userdata1.id == cards.userid}
+				{#if cards.name}
+					<div class="card ms-3 mb-3" style="width: 15rem;">
+						<div class="card-body border border-success">
+							<h5 class="card-title">Title : {cards.name}</h5>
+							<h5 class="card-title">Product Id : {cards.id}</h5>
+							<h5 class="card-title">User Id : {cards.userid}</h5>
+							<p class="card-text">
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita dolorem hic aut
+								architecto perspiciatis magni adipisci quo nihil ea, unde facilis molestiae facere
+								sint nam labore, quisquam minima excepturi exercitationem!
+							</p>
+							<h5 class="card-title">Price : {cards.price} /-</h5>
+							<div>
+								<button class=" btn bg-danger text-white" on:click={remover(cards.id)}
+									>Remove</button
+								>
+							</div>
 						</div>
 					</div>
-				</div>
+				{/if}
 			{/if}
-		{/if}
-	{/each}
-</div>
-<div class="text-center mt-5">
-	<a href="/checkout">
-		<button class="btn bg-success text-white ms-5 mb-5 fs-3"> Checkout 💵</button>
-	</a>
-</div>
-
+		{/each}
+	</div>
+	<div class="text-center mt-5">
+		<a href="/checkout">
+			<button class="btn bg-success text-white ms-5 mb-5 fs-3"> Checkout 💵</button>
+		</a>
+	</div>
 {:else}
-	<a href="/register" class="btn bg-danger text-white">Click Here To Login Login</a>
-{/if}
+	<div class=" mt-5 text-center">
+		<a href="/register" class=" text-white mt-5 btn btn-danger mb-5"> Click here To Login</a>
+		<h1>Please Login or Register 😊</h1>
+	</div>{/if}

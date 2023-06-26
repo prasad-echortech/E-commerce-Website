@@ -1,5 +1,7 @@
 <script>
 	import Crud from '../crud/+page.svelte';
+	import { browser } from '$app/environment';
+
 	let name = '';
 	let price;
 	let id = Math.floor(Math.random() * 1000);
@@ -33,10 +35,9 @@
 		}
 	};
 </script>
-
-<!-- <Nav /> -->
 <Crud />
-
+{#if browser}
+{#if localStorage.getItem('currentUser') !== null}
 <main><h1 class="mt-4">Create a New Product to Sell</h1></main>
 <div class="d-flex justify-content-center mt-5 w-100">
 	<form on:submit|preventDefault={handleSubmit}>
@@ -68,7 +69,8 @@
 		</div>
 	</form>
 </div>
-
+{/if}
+{/if}
 <style>
 	main {
 		text-align: center;

@@ -1,5 +1,7 @@
 <script>
 	import Crud from '../crud/+page.svelte';
+	import { browser } from '$app/environment';
+
 	let id;
 	console.log(id);
 	function del() {
@@ -11,6 +13,8 @@
 </script>
 
 <Crud />
+{#if browser}
+{#if localStorage.getItem('currentUser') !== null}
 <div class="text-center mt-5">
 	<h1>Delete Your Products Here</h1>
 	<form action="" on:submit|preventDefault={del}>
@@ -24,3 +28,5 @@
 		<button class=" btn btn-danger" type="submit">Delete (-)</button>
 	</form>
 </div>
+{/if}
+{/if}
